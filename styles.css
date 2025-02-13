@@ -22,18 +22,21 @@ header {
   top: 0;
   width: 100%;
   background-color: #36B4E5; /* Matching reference color */
-  padding: 10px 20px;
+  padding: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   transition: all 0.3s ease-in-out;
   z-index: 1000;
 }
 
 /* Adjusted body padding to prevent content from being hidden under the header */
 body {
-  padding-top: 100px;
+  padding-top: 200px;
 }
 
 /* BUSINESS NAME & PHONE STACKED */
@@ -112,9 +115,9 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #e0e0e0;
-  margin: 10px auto;
-  padding: 20px;
-  border-radius: 10px;
+  margin: 0px auto;
+  padding: 0px;
+  border-radius: 0px;
   width: 90%;
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -122,14 +125,14 @@ body {
 }
 
 .quote-info {
-  width: 100%;
+  width: 95%;
   text-align: center;
   color: rgb(0, 0, 0);
 }
 
 .business-logo {
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   margin-bottom: 10px;
 }
 
@@ -137,8 +140,10 @@ body {
   background: #36B4E5;
   padding: 20px;
   border-radius: 10px;
-  width: 100%;
+  width: 60%;
   font-family: 'Poppins', sans-serif;
+  border: 2px solid black; /* Fixed right border issue */
+  box-sizing: border-box;
 }
 
 input, select, textarea {
@@ -148,6 +153,51 @@ input, select, textarea {
   border: 2px solid black;
   border-radius: 5px;
   font-size: 14px;
+}
+
+/* Ensure checkboxes and labels align properly */
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; /* Reduce spacing */
+  justify-content: flex-start; /* Align everything to the left */
+}
+
+.service-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Reduce spacing between rows */
+  align-items: flex-start; /* Keep everything aligned to the left */
+}
+
+.service-options label {
+  display: inline-flex; /* Ensures checkbox and text stay on the same line */
+  align-items: center;
+  gap: 5px; /* Reduce space between checkbox and text */
+  font-size: 16px; /* Adjust text size */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+  
+.service-options input[type="checkbox"] {
+  margin: 0; /* Removes any extra margins */
+  transform: scale(1.1); /* Keeps checkbox size slightly larger for visibility */
+}
+
+
+.myinput[type="checkbox"]:before {
+  position: relative;
+  display: block;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #808080;
+  content: "";
+  background: #FFF;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 button {
@@ -166,6 +216,12 @@ button:hover {
   border: 2px solid black;
 }
 
+/* Required and Anti-Spam Check Labels */
+.required, .anti-spam {
+  color: red;
+  font-weight: bold;
+}
+
 /* Footer */
 footer {
   margin-top: auto;
@@ -173,18 +229,24 @@ footer {
   text-align: center;
   background: rgb(102, 102, 102);
   color: white;
-  padding: 10px;
+  padding: 0px;
 }
 
 @media (max-width: 768px) {
   .quote-container {
     width: 95%;
     padding: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .quote-form {
-    width: 100%;
+    width: 95%;
   }
   input, select, textarea {
-    width: 100%;
+    width: 95%;
+  }
+  .checkbox-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
