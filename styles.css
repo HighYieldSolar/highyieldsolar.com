@@ -28,13 +28,11 @@ header {
   justify-content: center;
   transition: all 0.3s ease-in-out;
   z-index: 1000;
-
 }
 
 body {
   padding-top: 129px; /* Adjust based on your header height */
 }
-
 
 /* BUSINESS NAME & PHONE STACKED */
 .top-bar {
@@ -86,7 +84,6 @@ body {
   opacity: 1;
 }
 
-
 /* Quote Form */
 
 .quote-container {
@@ -108,6 +105,8 @@ body {
 .business-logo {
   width: 500px;
   margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
 .quote-form {
@@ -189,8 +188,6 @@ button:hover {
     height: 16px;
 }
 
-
-
 /* Footer */
 footer {
   margin-top: auto; /* Pushes it to the bottom */
@@ -199,4 +196,48 @@ footer {
   background: rgb(102, 102, 102);
   color: white;
   padding: 10px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .quote-container {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .quote-info {
+    width: 100%;
+  }
+
+  .business-logo {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .quote-form {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row input,
+  .form-row select {
+    width: 100%;
+  }
+
+  input, select, textarea {
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
